@@ -7,6 +7,7 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body class=("home #{"#{controller_name}-#{action_name}"}") 
+    = render partial: 'layouts/navbar'
     .container-fluid
       #main-content.container.py-2
         = render partial: 'layouts/flash'
