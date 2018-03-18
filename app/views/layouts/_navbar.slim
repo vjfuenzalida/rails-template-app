@@ -1,21 +1,21 @@
 nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-  a.navbar-brand[href="#"]
-    | Navbar
+  a.navbar-brand[href=root_path]
+    | RailsTemplateApp
   button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"]
     span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
       li.nav-item.active
         a.nav-link[href="#"]
-          | Home 
+          | MenuOption1
           span.sr-only
             | (current)
       li.nav-item
         a.nav-link[href="#"]
-          | Link
+          | MenuOption2
       li.nav-item.dropdown
         a#navbarDropdown.nav-link.dropdown-toggle[href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
-          |  Dropdown 
+          | MenuDropdown
         .dropdown-menu[aria-labelledby="navbarDropdown"]
           a.dropdown-item[href="#"]
             | Action
@@ -24,10 +24,18 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
           .dropdown-divider
           a.dropdown-item[href="#"]
             | Something else here
-      li.nav-item
-        a.nav-link.disabled[href="#"]
-          | Disabled
-    form.form-inline.my-2.my-lg-0
-      input.form-control.mr-sm-2[type="search" placeholder="Search" aria-label="Search"]
-      button.btn.btn-outline-success.my-2.my-sm-0[type="submit"]
-        | Search
+      form.form-inline.mx-3
+        input.form-control.mr-sm-2[type="search" placeholder="Search" aria-label="Search"]
+        button.btn.btn-outline-success.my-2.my-sm-0[type="submit"]
+          | Search
+    ul.navbar-nav.my-2.my-lg-0
+      - if user_signed_in?
+        li.nav-item
+          = link_to edit_user_registration_path, class: "nav-link nav-item align-self-end pull-right" do
+            i.fa.fa-user
+            span<= current_user.email
+        li.nav-item
+          = link_to t('.sign_out'), destroy_user_session_url, method: :delete, data: { target: '#' }, class: "nav-link nav-item"
+      - else
+        = link_to t('.sign_in'), new_user_session_path, class: "nav-link nav-item"
+        = link_to t('.sign_up'), new_user_registration_path, class: "nav-link nav-link"
