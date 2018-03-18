@@ -1,0 +1,6 @@
+- if flash[:notice]
+  javascript:
+    toastr["info"]("#{flash[:notice].to_s}", "My App")
+- if flash[:alert]
+  javascript:
+    toastr["warning"]("#{flash[:alert].to_s}", "My App")

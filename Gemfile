@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# non blocking notifications
+gem 'toastr-rails'
 # Jquery gem for rails
 gem 'jquery-rails'
 # Bootstrap

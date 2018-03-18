@@ -6,10 +6,8 @@ html
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  body
-    div
-      p.notice
-        = notice
-      p.alert
-        = alert
-    = yield
+  body class=("home #{"#{controller_name}-#{action_name}"}") 
+    .container-fluid
+      #main-content.container.py-2
+        = render partial: 'layouts/flash'
+        = yield
