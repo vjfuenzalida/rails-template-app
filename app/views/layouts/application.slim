@@ -6,9 +6,12 @@ html
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  body class=("home #{"#{controller_name}-#{action_name}"}") 
-    = render partial: 'layouts/navbar'
-    .container-fluid
-      #main-content.container.p-4
-        = render partial: 'layouts/flash'
-        = yield
+  - data_class = "#{controller_name}-#{action_name}"
+  body class="home #{data_class} d-flex flex-column"
+    article
+      = render partial: 'layouts/navbar'
+      .container-fluid.flex-grow
+        .container.p-4
+          = render partial: 'layouts/flash'
+          = yield
+      = render partial: 'layouts/custom_footer'

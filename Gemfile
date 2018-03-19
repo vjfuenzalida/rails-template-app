@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Material Icons
+gem 'material_icons'
+# Font Awesome support
+gem "font-awesome-rails"
 # Markdown support for slim
 gem 'kramdown', '~> 1.11', '>= 1.11.1'
 # non blocking notifications
