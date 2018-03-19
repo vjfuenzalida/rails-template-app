@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Markdown support for slim
+gem 'kramdown', '~> 1.11', '>= 1.11.1'
 # non blocking notifications
 gem 'toastr-rails'
 # Jquery gem for rails

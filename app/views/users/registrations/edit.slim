@@ -11,7 +11,8 @@ h2
       | Currently waiting confirmation for: #{resource.unconfirmed_email}
   .field
     = f.label :password
-    i (leave blank if you don't want to change it)
+    markdown:
+      *leave blank if you don't want to change it*
     br/
     = f.password_field :password, autocomplete: "off"
     - if @minimum_password_length
@@ -25,7 +26,8 @@ h2
     = f.password_field :password_confirmation, autocomplete: "off"
   .field
     = f.label :current_password
-    i (we need your current password to confirm your changes)
+    markdown:
+      * we need your current password to confirm your changes *
     br/
     = f.password_field :current_password, autocomplete: "off"
   .actions
