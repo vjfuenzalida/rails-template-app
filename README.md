@@ -1,24 +1,27 @@
-# README
+# Base para Aplicación Web
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Autor: Vicente Fuenzalida Marín
 
-Things you may want to cover:
+La idea de esta aplicación es servir como un punto de partida para la realización de aplicaciones *sencillas* a modo de **Proof of Concept**.
 
-* Ruby version
+Se realizó la integración con diversas gemas "típicas" en varias *branches* para poder trabajar solo con las *features* que se necesiten.  
 
-* System dependencies
+La idea es seleccionar la branch que contenga las caracteristicas apropiadas para el proyecto que se desea desarrollar.
 
-* Configuration
+## Las gemas o funcionalidades que se cubren son las siguientes:
 
-* Database creation
+* Devise (Autentificación de usuarios)
 
-* Database initialization
+* Bootstrap (JS y CSS responsive)
 
-* How to run the test suite
+* Toastr (notificaciones)
 
-* Services (job queues, cache servers, search engines, etc.)
+* Slim (motor de templating)
 
-* Deployment instructions
+* PostgreSQL (Base de datos)
 
-* ...
+### Consideraciones
+
+* Ruby 2.5.0p0
+* Rails 5.1.5
+* RVM 1.29.2 (como gestor de entorno ruby)
