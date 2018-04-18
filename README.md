@@ -23,5 +23,5 @@ La idea es seleccionar la branch que contenga las caracteristicas apropiadas par
 ### Consideraciones
 
 * Ruby 2.5.0p0
-* Rails 5.1.5
+* Rails 5.2.0
 * RVM 1.29.2 (como gestor de entorno ruby)
